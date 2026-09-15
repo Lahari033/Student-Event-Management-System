@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f1f5f9;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #cbd5e1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        .add-event,
+        .manage-events {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #d1d5db;
+        }
+
+        h2 {
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        .add-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .add-btn:hover {
+            background: #1d4ed8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #1e293b;
+            color: white;
+            padding: 13px;
+        }
+
+        td {
+            padding: 13px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .edit {
+            background: #f59e0b;
+            color: white;
+            border: none;
+            padding: 7px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 7px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            background: #0f172a;
+            color: white;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        @media(max-width: 700px) {
+            .form {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Event Management Portal</h1>
+    <p>Administrator Dashboard</p>
+</header>
+
+<div class="container">
+
+    <div class="add-event">
+
+        <h2>Add New Event</h2>
+
+        <div class="form">
+
+            <input type="text" placeholder="Event Name">
+
+            <input type="text" placeholder="Event Organizer">
+
+            <input type="date">
+
+            <input type="time">
+
+            <input type="text" placeholder="Event Venue">
+
+            <select>
+                <option>Select Category</option>
+                <option>Technical</option>
+                <option>Cultural</option>
+                <option>Sports</option>
+                <option>Workshop</option>
+            </select>
+
+        </div>
+
+        <button class="add-btn">Add Event</button>
+
+    </div>
+
+
+    <div class="manage-events">
+
+        <h2>Manage Events</h2>
+
+        <table>
+
+            <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Venue</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr>
+                <td>Tech Fest</td>
+                <td>25 Sep 2026</td>
+                <td>Main Auditorium</td>
+                <td>Technical</td>
+                <td>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Coding Contest</td>
+                <td>28 Sep 2026</td>
+                <td>Computer Lab</td>
+                <td>Technical</td>
+                <td>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Cultural Fest</td>
+                <td>02 Oct 2026</td>
+                <td>College Ground</td>
+                <td>Cultural</td>
+                <td>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Student Event Management System
+</footer>
+
+</body>
+</html>
