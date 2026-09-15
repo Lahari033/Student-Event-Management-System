@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusConnect - Student Events</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px #dbe2ea;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #0891b2;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #475569;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #0891b2;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 420px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ecfeff;
+        }
+
+        .hero-content {
+            width: 55%;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #164e63;
+        }
+
+        .hero h1 span {
+            color: #0891b2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            background: #0891b2;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .explore-btn:hover {
+            background: #0e7490;
+        }
+
+        /* Event Highlight */
+        .highlight {
+            width: 320px;
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px #cbd5e1;
+        }
+
+        .highlight h2 {
+            color: #164e63;
+            margin-bottom: 15px;
+        }
+
+        .highlight p {
+            margin: 10px 0;
+            color: #475569;
+        }
+
+        .register {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 11px;
+            background: #f97316;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        /* Events */
+        .events {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .events h2 {
+            font-size: 32px;
+            color: #164e63;
+        }
+
+        .events-intro {
+            margin: 10px 0 35px;
+            color: #64748b;
+        }
+
+        .event-list {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .event {
+            width: 30%;
+            background: white;
+            padding: 25px;
+            text-align: left;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px #dbe2ea;
+            transition: 0.3s;
+        }
+
+        .event:hover {
+            transform: translateY(-7px);
+        }
+
+        .event-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .event h3 {
+            color: #164e63;
+            margin-bottom: 12px;
+        }
+
+        .event p {
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .view {
+            color: #0891b2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Steps */
+        .steps {
+            padding: 55px 8%;
+            background: #164e63;
+            color: white;
+            text-align: center;
+        }
+
+        .steps h2 {
+            margin-bottom: 35px;
+        }
+
+        .step-box {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+        }
+
+        .step {
+            width: 180px;
+        }
+
+        .circle {
+            width: 45px;
+            height: 45px;
+            margin: auto auto 15px;
+            border-radius: 50%;
+            background: #f97316;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step p {
+            margin-top: 8px;
+            color: #cbd5e1;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive */
+        @media(max-width: 750px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .event-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event {
+                width: 90%;
+            }
+
+            .step-box {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">CampusConnect</div>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Events</a>
+            <a href="#">Register</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Make Your Campus Life
+                <span>More Exciting</span>
+            </h1>
+
+            <p>
+                Discover college events, workshops, competitions
+                and cultural activities. Find something interesting
+                and be a part of your campus community.
+            </p>
+
+            <a href="#" class="explore-btn">
+                Explore Events
+            </a>
+
+        </div>
+
+
+        <div class="highlight">
+
+            <h2>⭐ Event of the Week</h2>
+
+            <p><b>Innovation & Startup Day</b></p>
+
+            <p>📅 30 September 2026</p>
+
+            <p>⏰ 10:00 AM</p>
+
+            <p>📍 Seminar Hall</p>
+
+            <a href="#" class="register">
+                Register Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Featured Events -->
+    <section class="events">
+
+        <h2>Explore Events</h2>
+
+        <p class="events-intro">
+            Choose from a variety of activities happening on campus.
+        </p>
+
+
+        <div class="event-list">
+
+            <div class="event">
+
+                <div class="event-icon">💻</div>
+
+                <h3>Hackathon</h3>
+
+                <p>
+                    Build innovative solutions and compete
+                    with talented student developers.
+                </p>
+
+                <a href="#" class="view">
+                    View Details →
+                </a>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-icon">🎭</div>
+
+                <h3>Cultural Night</h3>
+
+                <p>
+                    Enjoy music, dance, drama and performances
+                    from students across the campus.
+                </p>
+
+                <a href="#" class="view">
+                    View Details →
+                </a>
+
+            </div>
+
+
+            <div class="event">
+
+                <div class="event-icon">🏆</div>
+
+                <h3>Sports Meet</h3>
+
+                <p>
+                    Participate in exciting sports competitions
+                    and represent your department.
+                </p>
+
+                <a href="#" class="view">
+                    View Details →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+    <section class="steps">
+
+        <h2>How CampusConnect Works</h2>
+
+        <div class="step-box">
+
+            <div class="step">
+                <div class="circle">01</div>
+                <h3>Discover</h3>
+                <p>Find upcoming campus events.</p>
+            </div>
+
+            <div class="step">
+                <div class="circle">02</div>
+                <h3>Register</h3>
+                <p>Register for your favourite event.</p>
+            </div>
+
+            <div class="step">
+                <div class="circle">03</div>
+                <h3>Participate</h3>
+                <p>Attend and enjoy the event.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 CampusConnect | Student Event Management System
+    </footer>
+
+</body>
+</html>
